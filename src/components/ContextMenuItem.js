@@ -46,7 +46,7 @@ const defaultProps = {
     isAnonymousAction: false,
 };
 
-function ContextMenuItem({isDelayButtonStateComplete, onPress, successIcon, successText, toggleDelayButtonState, icon, text, isMini, description, isAnonymousAction}) {
+function ContextMenuItem({isDelayButtonStateComplete, onPress, successIcon, successText, toggleDelayButtonState, icon, text, isMini, description, isAnonymousAction, isSelected}) {
     const {windowWidth} = useWindowDimensions();
 
     const triggerPressAndUpdateSuccess = useCallback(() => {
@@ -90,6 +90,7 @@ function ContextMenuItem({isDelayButtonStateComplete, onPress, successIcon, succ
             descriptionTextStyle={styles.breakAll}
             style={getContextMenuItemStyles(windowWidth)}
             isAnonymousAction={isAnonymousAction}
+            focused={isSelected}
         />
     );
 }
